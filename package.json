@@ -5,12 +5,21 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js"
-
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Nik P",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
   }
 }
